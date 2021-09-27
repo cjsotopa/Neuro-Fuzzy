@@ -1,0 +1,49 @@
+[System]
+Name='obsesidad'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='estatura'
+Range=[1.08 1.95]
+NumMFs=3
+MF1='baja':'gaussmf',[0.1305 1.08]
+MF2='normal':'gaussmf',[0.1305 1.515]
+MF3='alta':'gaussmf',[0.1305 1.95]
+
+[Input2]
+Name='peso'
+Range=[15.1 148]
+NumMFs=3
+MF1='bajo':'gaussmf',[22.57 15.1]
+MF2='normal':'gaussmf',[22.57 81.55]
+MF3='alto':'gaussmf',[22.59 148]
+
+[Input3]
+Name='IMC'
+Range=[11.78 48.05]
+NumMFs=3
+MF1='IMC_B':'gaussmf',[6.163 11.78]
+MF2='IMC_N':'gaussmf',[6.163 29.92]
+MF3='IMC_A':'gaussmf',[6.163 48.05]
+
+[Output1]
+Name='obesidad'
+Range=[0 30]
+NumMFs=3
+MF1='normal':'trimf',[0 5 10]
+MF2='sobrepeso':'trimf',[10 15 20]
+MF3='obesidad':'trimf',[20 25 30]
+
+[Rules]
+1 0 0, 1 (1) : 2
+2 0 0, 2 (1) : 2
+3 0 0, 3 (1) : 2

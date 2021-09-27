@@ -1,0 +1,97 @@
+[System]
+Name='Obesidad_11'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='PESO'
+Range=[0 100]
+NumMFs=3
+MF1='Bajo':'trapmf',[0 0 27 30.7]
+MF2='Normal':'trapmf',[27 30.75 43 51]
+MF3='Alto':'trapmf',[43 51 100 100]
+
+[Input2]
+Name='ESTATURA'
+Range=[0 200]
+NumMFs=3
+MF1='Bajo':'trapmf',[0 0 130 135]
+MF2='Normal':'trapmf',[130 135 150 155]
+MF3='Alto':'trapmf',[150 155 200 200]
+
+[Input3]
+Name='IMC'
+Range=[0 50]
+NumMFs=3
+MF1='IMC_B':'trapmf',[0 0 14 15.5]
+MF2='IMC_N':'trapmf',[14 15.5 20 22.5]
+MF3='IMC_A':'trapmf',[20 22.5 50 50]
+
+[Output1]
+Name='OBESIDAD'
+Range=[0 100]
+NumMFs=27
+MF1='NORMAL':'constant',[0.467041221957887]
+MF2='NORMAL':'constant',[0]
+MF3='NORMAL':'constant',[0]
+MF4='NORMAL':'constant',[-0.482650383443931]
+MF5='SOBREPESO':'constant',[0]
+MF6='OBESO':'constant',[0]
+MF7='NORMAL':'constant',[3.00749854021999]
+MF8='SOBREPESO':'constant',[0]
+MF9='OBESO':'constant',[0]
+MF10='NORMAL':'constant',[-3.03267980513544]
+MF11='NORMAL':'constant',[-464.400953831524]
+MF12='OBESO':'constant',[0]
+MF13='SOBREPESO':'constant',[0.834663636577578]
+MF14='SOBREPESO':'constant',[64.1778657779681]
+MF15='OBESO':'constant',[0]
+MF16='SOBREPESO':'constant',[-5.57397917630932]
+MF17='OBESO':'constant',[-236.468140910175]
+MF18='OBESO':'constant',[0]
+MF19='NORMAL':'constant',[22337.6468261022]
+MF20='NORMAL':'constant',[1784.35762023887]
+MF21='SOBREPESO':'constant',[0]
+MF22='SOBREPESO':'constant',[57.880982985929]
+MF23='OBESO':'constant',[75.4129541359921]
+MF24='OBESO':'constant',[99.9999427018567]
+MF25='SOBREPESO':'constant',[1.8237830942554]
+MF26='OBESO':'constant',[63.5723410800367]
+MF27='OBESO':'constant',[99.9999792932147]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 2 (1) : 1
+1 1 3, 3 (1) : 1
+1 2 1, 4 (1) : 1
+1 2 2, 5 (1) : 1
+1 2 3, 6 (1) : 1
+1 3 1, 7 (1) : 1
+1 3 2, 8 (1) : 1
+1 3 3, 9 (1) : 1
+2 1 1, 10 (1) : 1
+2 1 2, 11 (1) : 1
+2 1 3, 12 (1) : 1
+2 2 1, 13 (1) : 1
+2 2 2, 14 (1) : 1
+2 2 3, 15 (1) : 1
+2 3 1, 16 (1) : 1
+2 3 2, 17 (1) : 1
+2 3 3, 18 (1) : 1
+3 1 1, 19 (1) : 1
+3 1 2, 20 (1) : 1
+3 1 3, 21 (1) : 1
+3 2 1, 22 (1) : 1
+3 2 2, 23 (1) : 1
+3 2 3, 24 (1) : 1
+3 3 1, 25 (1) : 1
+3 3 2, 26 (1) : 1
+3 3 3, 27 (1) : 1

@@ -1,0 +1,73 @@
+[System]
+Name='OBESIDAD_SUGENO_6_8'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='PESO'
+Range=[0 100]
+NumMFs=3
+MF1='BAJO':'trapmf',[0 0 18 24]
+MF2='NORMAL':'trimf',[18 24 30]
+MF3='ALTO':'trapmf',[24 30 100 100]
+
+[Input2]
+Name='ESTATURA'
+Range=[0 200]
+NumMFs=3
+MF1='BAJA':'trapmf',[0 0 110 122.5]
+MF2='NORMAL':'trimf',[110 122.5 135]
+MF3='ALTA':'trapmf',[122.5 135 200 200]
+
+[Input3]
+Name='IMC'
+Range=[0 50]
+NumMFs=3
+MF1='BAJA':'trapmf',[0 0 18 21.75]
+MF2='NORMAL':'trimf',[18 21.75 25]
+MF3='ALTA':'trapmf',[21.75 25 50 50]
+
+[Output1]
+Name='OBESIDAD'
+Range=[0 100]
+NumMFs=3
+MF1='NORMAL':'linear',[0 0 0 13.2412268931151]
+MF2='SOBREPESO':'linear',[0 0 0 50]
+MF3='OBESO':'linear',[0 0 0 86.7587731068849]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 2 (1) : 1
+1 2 3, 3 (1) : 1
+1 3 1, 1 (1) : 1
+1 3 2, 2 (1) : 1
+1 3 3, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 1 (1) : 1
+2 1 3, 3 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 3 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 3 3, 3 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 1 (1) : 1
+3 1 3, 2 (1) : 1
+3 2 1, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
